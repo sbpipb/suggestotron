@@ -1,6 +1,8 @@
-<h1>Editing Topic</h1>
+<div class="container">
+	<h1>Editing Topic</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+	<%= link_to 'Show', @topic, class: "btn btn-default" %>
+	<%= link_to 'Back', topics_path, class: "btn btn-default"  %>
+</div>

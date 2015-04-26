@@ -20,11 +20,11 @@
           <td><%= link_to topic.title, topic %></td>
 
           <td><%= pluralize(topic.votes.count, "vote") %></td>
-          <td><%= button_to '+1', upvote_topic_path(topic), method: :post, class: "btn btn-success" %></td>
+          <td><%= button_to '+1', upvote_topic_path(topic), method: :post, class: "btn btn-success btn-small" %></td>
           <td><%= button_to '-1', downvote_topic_path(topic), method: :post, class: "btn btn-danger" %></td>
 
-          <td><%= link_to 'Edit', edit_topic_path(topic), class: "btn" %></td>
-          <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"  %></td>
+          <td><%= link_to 'Edit', edit_topic_path(topic), class: "btn btn-default" %></td>
+          <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"  %></td>
 
         </tr>
       <% end %>
