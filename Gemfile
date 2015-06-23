@@ -43,7 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'sinatra', :require => nil
+gem 'sidekiq'
 
 gem "twitter-bootstrap-rails"
-
 gem "devise"
