@@ -11,11 +11,16 @@ class UserMailer < ApplicationMailer
 
   def topic_email(topic)
   	@topic = topic
-  	mail(to:'julian@dispostable.com',
-        subject: 'New Topic:'+@topic.title+' created',
-        template_path: 'topic_mailer',
-        template_name: 'topic_email'
-      )
+    begin
+      mail(to:'julian@dispostable.com',
+          subject: 'New Topic:'+@topic.title+' created',
+          template_path: 'topic_mailer',
+          template_name: 'topic_email'
+        )
+    rescue Exception => e
+      #
+    end
+
   end
 
 end
