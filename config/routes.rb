@@ -18,7 +18,7 @@ get 'about' => 'static#about', as: :about
   root 'topics#index'
 
   require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => '/jobs'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

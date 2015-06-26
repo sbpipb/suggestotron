@@ -67,14 +67,13 @@ class TopicsController < ApplicationController
   def upvote
     @topic = Topic.find(params[:id])
     @topic.votes.create
-    # CoolWorker.perform_async('I am ASYNC ', 5)
-    # CoolWorker.perform_in(3.seconds, '3 Seconds ', 5)
-    # UserMailer.topic_email(@topic).deliver_later
-    # UserMailer.delay.topic_email(@topic)
-    # UserMailer.delay.topic_email(@topic)
-    # CoolWorker.send_email_async(@topic, 5)
-    CoolWorker.perform_async(@topic)
-    # HardWorker.perform_in(5.minutes, 'bob', 5)
+
+    begin
+      CoolWorker.perform_async(@topic)
+    rescue Exception => e
+
+    end
+
     redirect_to(topics_path)
   end
 

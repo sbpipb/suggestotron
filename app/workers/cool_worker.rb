@@ -13,7 +13,6 @@ class CoolWorker
     	# UserMailer.topic_email(@topic)
         @topic = topic
         UserMailer.topic_email(@topic)
-        # puts 'start'
     end
 
 end
