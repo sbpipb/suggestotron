@@ -48,3 +48,4 @@ gem 'sidekiq'
 
 gem "twitter-bootstrap-rails"
 gem "devise"
+gem "geocoder"
