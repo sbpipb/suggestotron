@@ -49,3 +49,8 @@ gem 'sidekiq'
 gem "twitter-bootstrap-rails"
 gem "devise"
 gem "geocoder"
+gem 'activeadmin', github: 'activeadmin'
+# Plus integrations with:
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
