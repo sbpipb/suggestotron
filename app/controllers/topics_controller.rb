@@ -5,7 +5,15 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.joins(:votes).select("count(votes.id) as vote_count, topics.*").order("vote_count desc").group("topics.id")
+    # @topics = Topic.joins(:votes).select("count(votes.id) as vote_count, topics.*").order("vote_count desc").group("topics.id")    
+    #not optimal, N number of queries
+    @topics = Topic.all.sort_by { |topic| 0 - topic.votes.count }
+  
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @topics }
+    end
+
   end
 
   # GET /topics/1
