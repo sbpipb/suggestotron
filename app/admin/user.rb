@@ -1,14 +1,18 @@
 ActiveAdmin.register User do
 
 permit_params :email, :city, :address, :password
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+filter :email
+  index do
+    selectable_column
+    id_column
+    column :email
+    column :city
+    column :address
+    column :created_at
+    # column :updated_at
+    column :last_sign_in_at
+    actions
+  end
 
   form do |f|
     f.inputs "Basic Information" do

@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   # after_validation :geocode, :if => :current_sign_in_ip_changed?  
   reverse_geocoded_by :latitude, :longitude, :address => :full_address
   after_validation :reverse_geocode  # auto-fetch address
+  
+  has_many :topics
 
   def address_from_components          
     "#{address.to_s}, #{city.to_s}".upcase
